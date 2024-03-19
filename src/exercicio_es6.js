@@ -5,17 +5,11 @@ const alunos = [
   { nome: 'Júlia', nota: 10 },
   { nome: 'Giovana', nota: 4 },
   { nome: 'Alexandra', nota: 9 },
-]
+];
 
-function filtroAprovados(listAlunos) {
-  const nomes = [];
-  listAlunos.forEach(aluno => {
-    if (aluno.nota >= 6) {
-      nomes.push(aluno.nome);
-    }
-  });
-  return nomes;
-}
+const filtroAprovados = (listAlunos) => {
+  return listAlunos.filter(aluno => aluno.nota >= 6).map(aluno => aluno.nome);
+};
 
 const listAlunosAprovados = filtroAprovados(alunos);
 console.log(`Alunos aprovados são: ${listAlunosAprovados}`);
